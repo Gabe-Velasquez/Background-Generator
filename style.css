@@ -25,3 +25,26 @@ h3 {
     letter-spacing: 0.01em;
 
 }
+
+#random {
+    cursor: pointer;
+    margin: auto;
+    padding: 5px;
+    border: solid 5px white;
+    color: white;
+    outline: none;
+    border-radius: 5px;
+    box-shadow: 0 5px #999;
+}
+
+#random:active {
+    box-shadow: 0 2px #666;
+    transform: translateY(2px);
+}
+
+.color1, .color2, #copyBtn {
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 5px #999;
+    border: none;
+}
