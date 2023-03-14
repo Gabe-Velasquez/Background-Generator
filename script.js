@@ -7,40 +7,39 @@ var copy = document.querySelector("#copyBtn");
 
 //creates function to change background color value
 function setGradient() {
-    body.style.background = 
-	"linear-gradient(to right, " 
-	+ color1.value 
-	+ ", " 
-	+ color2.value 
-	+ ")";
+  body.style.background =
+    "linear-gradient(to right, " + color1.value + ", " + color2.value + ")";
 
-	css.textContent = body.style.background + ";";
+  css.textContent = body.style.background + ";";
 }
 
 //when page is loaded, gives gradient values
 window.onload = setGradient();
 
 //random value function
-function getRandomGradient(){
-    var randomColor1 = '#'+ Math.floor((Math.random()*(1<<24)|0)).toString(16);
-	var randomColor2 = '#'+ Math.floor((Math.random()*(1<<24)|0)).toString(16);
+function getRandomGradient() {
+  var randomColor1 =
+    "#" + Math.floor((Math.random() * (1 << 24)) | 0).toString(16);
+  var randomColor2 =
+    "#" + Math.floor((Math.random() * (1 << 24)) | 0).toString(16);
 
-    color1.value = randomColor1;
-    color2.value = randomColor2;
+  color1.value = randomColor1;
+  color2.value = randomColor2;
 
-    setGradient();
-	css.textContent = `linear-gradient(to right, 
+  setGradient();
+  css.textContent = `linear-gradient(to right, 
     ${color1.value}, ${color2.value});`.toUpperCase();
 }
 
 //copy button function
 copy.addEventListener("click", () => {
-    navigator.clipboard.writeText(css.textContent)
-    .then(()=> {
-        console.log('text copied');
+  navigator.clipboard
+    .writeText(css.textContent)
+    .then(() => {
+      console.log("text copied");
     })
     .catch((err) => {
-        console.err('Failed Copy: ', err);
+      console.err("Failed Copy: ", err);
     });
 });
 
